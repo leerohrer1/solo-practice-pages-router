@@ -1,40 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+🧠 Practice Task: Build a Mini Blog Routing System
+🗂️ Objective:
+Use file-based routing in Next.js (Pages Router) to create a basic blog structure with various types of pages and routing strategies.
 
-## Getting Started
+🔧 Setup
+Create a new Next.js app (if not already done):
 
-First, run the development server:
-
-```bash
+npx create-next-app@latest blog-routing-practice
+cd blog-routing-practice
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+📌 Task Requirements:
+1. Create Static Routes
+Create a pages/about.js page that explains the purpose of your blog.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Create a pages/contact.js page with placeholder contact info.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+2. Create Nested Routes
+Inside pages/blog/, create:
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+index.js – A list of dummy blog posts (e.g., Post 1, Post 2).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+latest.js – Shows the "latest blog post" or a static message.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Create Dynamic Routes
+Still inside pages/blog/, create [postId].js.
 
-## Learn More
+Use useRouter() to extract the postId from the URL.
 
-To learn more about Next.js, take a look at the following resources:
+Display: You are viewing post: <postId>.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+4. Create Nested Dynamic Routes
+Create pages/authors/[authorId]/posts/[postId].js.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Show: Author: <authorId>, Post: <postId>
 
-## Deploy on Vercel
+5. Catch-All Routes
+Create pages/docs/[...slug].js.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Use useRouter() to display the path as segments.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+Example URL /docs/react/hooks → Output: react > hooks
+
+6. Link Navigation
+In pages/index.js, add links using the Link component to:
+
+About
+
+Blog
+
+Contact
+
+A specific blog post: /blog/hello-world
+
+A nested dynamic route: /authors/john/posts/123
+
+7. Programmatic Navigation
+Add a button in pages/contact.js that navigates programmatically to /about.
+
+8. Custom 404 Page
+Create pages/404.js with a friendly error message.
+
+✅ Bonus Challenge (Optional)
+Add styling with basic CSS modules to give a blog-like feel.
+
+Pass query params using router.push().
+
+🧪 What This Reinforces:
+Static and dynamic routes
+
+File-based routing patterns
+
+Navigation using Link and router.push()
+
+Custom error handling
+
+Router hooks like useRouter()
+
+Let me know if you want this turned into a downloadable exercise file or integrated with TypeScript.
