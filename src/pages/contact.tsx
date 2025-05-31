@@ -1,3 +1,8 @@
- export default function Contact() {
-  return <h2>Contact</h2>
+export default function Contact() {
+  return (
+    <>
+      <h1>Contact</h1>
+      <p>This is where contact info could go.</p>
+    </>
+  );
 }

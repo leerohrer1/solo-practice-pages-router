@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Latest from "./latest";
 
 export default function BlogPosts() {
@@ -7,12 +8,14 @@ export default function BlogPosts() {
       <Latest array={posts} />
       <h2>More Posts</h2>
       <ul>
-        {posts.map((post) => 
+        {posts.map((post) => (
           <>
-            <li key={post.id}>{post.title}</li>
+            <li key={post.id}>
+              <Link href={`/blog/${post.id}`}>{post.title}</Link>
+            </li>
             <p>{post.content}</p>
           </>
-        )}
+        ))}
       </ul>
     </>
   );
