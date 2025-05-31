@@ -14,7 +14,9 @@ export default function AuthorsPosts() {
       <ul>
         {author.posts.map((post) => (
           <li key={post.id}>
-            <Link href={`/authors/${author.id}/posts/${post.id}`}>{post.title}</Link>
+            <Link href={`/authors/${author.id}/posts/${post.id}`}>
+              {post.title}
+            </Link>
           </li>
         ))}
       </ul>
