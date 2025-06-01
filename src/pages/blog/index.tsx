@@ -6,7 +6,7 @@ export default function BlogPosts() {
     <>
       <h1>Blog Posts</h1>
       <Latest array={posts} />
-      <h2>More Posts</h2>
+      <h2>All Posts</h2>
       <ul>
         {posts.map((post) => (
           <>

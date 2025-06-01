@@ -8,9 +8,7 @@ export default function Home() {
   return (
     <>
       <header>
-        {" "}
         <ul>
-          {" "}
           <Link href={`/about`}>About</Link>{" "}
           <Link href={`/contact`}>Contact</Link>{" "}
           <Link href={`/authors`}>Other Authors</Link>{" "}

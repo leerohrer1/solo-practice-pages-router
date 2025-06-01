@@ -12,7 +12,7 @@ export default function Contact() {
   return (
     <>
       <NavBar slug={slug} />
-      <button onClick={loadAboutPage} ></button>
+      <button className="btn" onClick={loadAboutPage}>About Page</button>
       <h1>Contact</h1>
       <p>This is where contact info could go.</p>
     </>
