@@ -1,9 +1,9 @@
-import NavBar from "@/components/nav-bar";
+import Path from "@/components/path";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function Home() {
-  const { slug } = (useRouter()).query;
+  const pathname = useRouter().pathname;
 
   return (
     <>
@@ -15,7 +15,7 @@ export default function Home() {
           <Link href={`/blog`}>My Posts</Link>
         </ul>
       </header>
-      <NavBar slug={slug} />
+      <Path path={pathname} />
       <h1>Welcome to this Blog</h1>
     </>
   );
